@@ -1,0 +1,93 @@
+[
+  {
+    "dnsSearchDomains": [],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/ecs/consul-agent-tf",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "entryPoint": [],
+    "portMappings": [
+      {
+        "hostPort": 8301,
+        "protocol": "tcp",
+        "containerPort": 8301
+      },
+      {
+        "hostPort": 8301,
+        "protocol": "udp",
+        "containerPort": 8301
+      },
+      {
+        "hostPort": 8400,
+        "protocol": "tcp",
+        "containerPort": 8400
+      },
+      {
+        "hostPort": 8500,
+        "protocol": "tcp",
+        "containerPort": 8500
+      },
+      {
+        "hostPort": 53,
+        "protocol": "udp",
+        "containerPort": 53
+      }
+    ],
+    "command": [
+      "consul",
+      "agent",
+      "-ui",
+      "-config-file",
+      "/opt/consul/config/consul-agent.json",
+      "-data-dir",
+      "/consul/data"
+    ],
+    "linuxParameters": null,
+    "cpu": 0,
+    "environment": [],
+    "ulimits": [],
+    "dnsServers": [],
+    "mountPoints": [
+      {
+        "readOnly": true,
+        "containerPath": "/opt/consul/config",
+        "sourceVolume": "consul-config"
+      },
+      {
+        "readOnly": false,
+        "containerPath": "/opt/consul/data",
+        "sourceVolume": "consul-data"
+      },
+      {
+        "readOnly": true,
+        "containerPath": "/var/run/docker.sock",
+        "sourceVolume": "consul-docker"
+      }
+    ],
+    "workingDirectory": null,
+    "secrets": null,
+    "dockerSecurityOptions": [],
+    "memory": 128,
+    "memoryReservation": null,
+    "volumesFrom": [],
+    "image": "docker.io/consul:1.2.3",
+    "disableNetworking": null,
+    "interactive": null,
+    "healthCheck": null,
+    "essential": true,
+    "links": [],
+    "hostname": null,
+    "extraHosts": [],
+    "pseudoTerminal": null,
+    "user": null,
+    "readonlyRootFilesystem": null,
+    "dockerLabels": {},
+    "systemControls": null,
+    "privileged": null,
+    "name": "consul-agent-tf"
+  }
+]

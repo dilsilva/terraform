@@ -1,0 +1,60 @@
+[
+  {
+    "dnsSearchDomains": null,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/ecs/simpleapp",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "entryPoint": [
+    ],
+    "portMappings": [
+      {
+        "hostPort": 0,
+        "protocol": "tcp",
+        "containerPort": 1234
+      }
+    ],
+    "command": [
+    ],
+    "linuxParameters": null,
+    "cpu": 0,
+    "environment": [
+      {
+        "name": "http_proxy",
+        "value": "10.180.12.42:4140"
+      },
+      {
+        "name": "SERVICE_NAME",
+        "value": "simpleapp"
+      }
+    ],
+    "ulimits": null,
+    "dnsServers": null,
+    "mountPoints": [],
+    "workingDirectory": null,
+    "secrets": null,
+    "dockerSecurityOptions": null,
+    "memory": null,
+    "memoryReservation": 128,
+    "volumesFrom": [],
+    "image": "158207973304.dkr.ecr.us-east-1.amazonaws.com/sap-linkerd:latest",
+    "disableNetworking": null,
+    "interactive": null,
+    "healthCheck": null,
+    "essential": true,
+    "links": null,
+    "hostname": null,
+    "extraHosts": null,
+    "pseudoTerminal": null,
+    "user": null,
+    "readonlyRootFilesystem": null,
+    "dockerLabels": null,
+    "systemControls": null,
+    "privileged": null,
+    "name": "simpleapp"
+  }
+]

@@ -1,0 +1,159 @@
+[{
+  "dnsSearchDomains": null,
+  "logConfiguration": {
+    "logDriver": "awslogs",
+    "options": {
+      "awslogs-group": "/ecs/hello-world-tf",
+      "awslogs-region": "us-east-1",
+      "awslogs-stream-prefix": "ecs"
+    }},
+    "entryPoint": [
+      "/bin/sh",
+      "-c"
+    ],
+    "portMappings": [{
+      "hostPort": 0,
+      "protocol": "tcp",
+      "containerPort": 1234
+    }],
+    "command": [
+      "LOCAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4) http_proxy=$LOCAL_IP:4140 POD_IP=$LOCAL_IP helloworld -addr=:1234 -text=Hello -target=world"
+    ],
+    "linuxParameters": null,
+    "cpu": 0,
+    "environment": [{
+      "name": "SERVICE_NAME",
+      "value": "hello"
+    }],
+    "ulimits": null,
+    "dnsServers": null,
+    "mountPoints": [],
+    "workingDirectory": null,
+    "secrets": null,
+    "dockerSecurityOptions": null,
+    "memory": 128,
+    "memoryReservation": null,
+    "volumesFrom": [],
+    "image": "docker.io/buoyantio/helloworld:0.1.6",
+    "disableNetworking": null,
+    "interactive": null,
+    "healthCheck": null,
+    "essential": true,
+    "links": null,
+    "hostname": null,
+    "extraHosts": null,
+    "pseudoTerminal": null,
+    "user": null,
+    "readonlyRootFilesystem": null,
+    "dockerLabels": null,
+    "systemControls": null,
+    "privileged": null,
+    "name": "hello"
+  }
+,
+{
+  "dnsSearchDomains": null,
+  "logConfiguration": {
+    "logDriver": "awslogs",
+    "options": {
+      "awslogs-group": "/ecs/hello-world-tf",
+      "awslogs-region": "us-east-1",
+      "awslogs-stream-prefix": "ecs"
+    }},
+    "entryPoint": [
+      "/bin/sh",
+      "-c"
+    ],
+    "portMappings": [{
+      "hostPort": 0,
+      "protocol": "tcp",
+      "containerPort": 1234
+    }],
+    "command": [
+      "LOCAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4) http_proxy=$LOCAL_IP:4140 POD_IP=$LOCAL_IP helloworld -addr=:1234 -text=World"
+    ],
+    "linuxParameters": null,
+    "cpu": 0,
+    "environment": [{
+      "name": "SERVICE_NAME",
+      "value": "world"
+    }],
+    "ulimits": null,
+    "dnsServers": null,
+    "mountPoints": [],
+    "workingDirectory": null,
+    "secrets": null,
+    "dockerSecurityOptions": null,
+    "memory": 128,
+    "memoryReservation": null,
+    "volumesFrom": [],
+    "image": "docker.io/buoyantio/helloworld:0.1.6",
+    "disableNetworking": null,
+    "interactive": null,
+    "healthCheck": null,
+    "essential": true,
+    "links": null,
+    "hostname": null,
+    "extraHosts": null,
+    "pseudoTerminal": null,
+    "user": null,
+    "readonlyRootFilesystem": null,
+    "dockerLabels": null,
+    "systemControls": null,
+    "privileged": null,
+    "name": "world"
+  }
+,
+{
+  "dnsSearchDomains": null,
+  "entryPoint": [
+    "/bin/sh",
+    "-c"
+  ],
+  "portMappings": [{
+    "hostPort": 0,
+    "protocol": "tcp",
+    "containerPort": 1234
+  }],
+  "command": [
+    "LOCAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4) http_proxy=$LOCAL_IP:4140 POD_IP=$LOCAL_IP helloworld -addr=:1234 -text=World-V2"
+  ],
+  "linuxParameters": null,
+  "cpu": 0,
+  "environment": [{
+    "name": "SERVICE_NAME",
+    "value": "world-v2"
+  }],
+  "ulimits": null,
+  "logConfiguration": {
+    "logDriver": "awslogs",
+    "options": {
+      "awslogs-group": "/ecs/hello-world-tf",
+      "awslogs-region": "us-east-1",
+      "awslogs-stream-prefix": "ecs"
+    }},
+    "dnsServers": null,
+    "mountPoints": [],
+    "workingDirectory": null,
+    "secrets": null,
+    "dockerSecurityOptions": null,
+    "memory": 128,
+    "memoryReservation": null,
+    "volumesFrom": [],
+    "image": "docker.io/buoyantio/helloworld:0.1.6",
+    "disableNetworking": null,
+    "interactive": null,
+    "healthCheck": null,
+    "essential": true,
+    "links": null,
+    "hostname": null,
+    "extraHosts": null,
+    "pseudoTerminal": null,
+    "user": null,
+    "readonlyRootFilesystem": null,
+    "dockerLabels": null,
+    "systemControls": null,
+    "privileged": null,
+    "name": "world-v2"
+  }
+]

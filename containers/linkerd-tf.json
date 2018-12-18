@@ -1,0 +1,66 @@
+[{
+	"name": "linkerd-container",
+	"dnsSearchDomains": [],
+	"logConfiguration": {
+		"logDriver": "awslogs",
+		"options": {
+			"awslogs-group": "/ecs/linkerd-tf",
+			"awslogs-region": "us-east-1",
+			"awslogs-stream-prefix": "ecs"
+		}
+	},
+	"entryPoint": [],
+	"portMappings": [{
+			"hostPort": 4140,
+			"protocol": "tcp",
+			"containerPort": 4140
+		},
+		{
+			"hostPort": 4141,
+			"protocol": "tcp",
+			"containerPort": 4141
+		},
+		{
+			"hostPort": 9990,
+			"protocol": "tcp",
+			"containerPort": 9990
+		}
+	],
+	"command": [
+		"-log.level=DEBUG",
+		"/etc/linkerd/linkerd.yaml"
+	],
+	"linuxParameters": null,
+	"cpu": 0,
+	"environment": [{
+		"name": "SERVICE_9990_NAME",
+		"value": "linkerd-tf"
+	}],
+	"ulimits": [],
+	"dnsServers": [],
+	"mountPoints": [{
+		"readOnly": true,
+		"containerPath": "/etc/linkerd",
+		"sourceVolume": "linkerd-config"
+	}],
+	"workingDirectory": null,
+	"secrets": null,
+	"dockerSecurityOptions": [],
+	"memory": 1024,
+	"memoryReservation": null,
+	"volumesFrom": [],
+	"image": "docker.io/buoyantio/linkerd:1.5.1",
+	"disableNetworking": null,
+	"interactive": null,
+	"healthCheck": null,
+	"essential": true,
+	"links": [],
+	"hostname": null,
+	"extraHosts": [],
+	"pseudoTerminal": null,
+	"user": null,
+	"readonlyRootFilesystem": null,
+	"dockerLabels": {},
+	"systemControls": null,
+	"privileged": null
+}]
