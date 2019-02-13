@@ -1,3 +1,4 @@
+#ELASTICSEARCH DOMAIN DEFINITIONS
 resource "aws_elasticsearch_domain" "es-domain" {
   count                 = "${var.enabled == "true" ? 1 : 0}"
   domain_name           = "${var.name}-${var.stage}"
