@@ -30,18 +30,6 @@ variable "name" {
   description = "Name of the application"
 }
 
-variable "delimiter" {
-  type        = "string"
-  default     = "-"
-  description = "Delimiter to be used between `namespace`, `stage`, `name` and `attributes`"
-}
-
-variable "attributes" {
-  type        = "list"
-  default     = []
-  description = "Additional attributes (e.g. `1`)"
-}
-
 variable "tags" {
   type        = "map"
   default     = {}
@@ -69,18 +57,6 @@ variable "instance_type" {
 variable "instance_count" {
   description = "Number of data nodes in the cluster"
   default     = 4
-}
-
-variable "iam_role_arns" {
-  type        = "list"
-  default     = []
-  description = "List of IAM role ARNs to permit access to the Elasticsearch domain"
-}
-
-variable "iam_actions" {
-  type        = "list"
-  default     = []
-  description = "List of actions to allow for the IAM roles, _e.g._ `es:ESHttpGet`, `es:ESHttpPut`, `es:ESHttpPost`"
 }
 
 variable "zone_awareness_enabled" {
@@ -175,24 +151,6 @@ variable "dedicated_master_type" {
   description = "Instance type of the dedicated master nodes in the cluster"
 }
 
-variable "advanced_options" {
-  type        = "map"
-  default     = {}
-  description = "Key-value string pairs to specify advanced configuration options"
-}
-
-variable "kibana_subdomain_name" {
-  type        = "string"
-  default     = "kibana"
-  description = "The name of the subdomain for Kibana in the DNS zone (_e.g._ `kibana`, `ui`, `ui-es`, `search-ui`, `kibana.elasticsearch`)"
-}
-
-variable "create_iam_service_linked_role" {
-  type        = "string"
-  default     = "true"
-  description = "Whether to create `AWSServiceRoleForAmazonElasticsearchService` service-linked role. Set it to `false` if you already have an ElasticSearch cluster created in the AWS account and AWSServiceRoleForAmazonElasticsearchService already exists. See https://github.com/terraform-providers/terraform-provider-aws/issues/5218 for more info"
-}
-
 variable "node_to_node_encryption_enabled" {
   type        = "string"
   default     = "false"
@@ -203,10 +161,4 @@ variable "kibana_authentication_enabled" {
   type        = "string"
   default     = "true"
   description = "Specifies whether Amazon Cognito authentication with Kibana is enabled or not"
-}
-
-variable "access_ips" {
-  type        = "list"
-  default     = []
-  description = "List of ips that are allowed to access the service"
 }

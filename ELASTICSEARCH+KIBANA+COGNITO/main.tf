@@ -3,7 +3,6 @@ resource "aws_elasticsearch_domain" "es-domain" {
   domain_name           = "${var.name}-${var.stage}"
   elasticsearch_version = "${var.elasticsearch_version}"
 
-  advanced_options = "${var.advanced_options}"
 
   ebs_options {
     ebs_enabled = "${var.ebs_volume_size > 0 ? true : false}"

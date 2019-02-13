@@ -27,13 +27,11 @@ node_to_node_encryption_enabled = "false"
 ##CLUSTER
 instance_count              = 1         
 instance_type               = "t2.small.elasticsearch"            
-dedicated_master_enabled    = "0" 
-dedicated_master_count      = "0"   
+
 dedicated_master_type       = "0"    
-zone_awareness_enabled      = "0"
-dedicated_master_enabled    = "0"   
+dedicated_master_enabled    = ""   
 dedicated_master_type       = "0"
-dedicated_master_count      = "0"
+dedicated_master_count      = ""
 zone_awareness_enabled      = "false"
 
 #OPTIONS
