@@ -1,8 +1,8 @@
 #CONNECTION SETTINGS
-AWS_ACCOUNT                 = "158207973304"
+AWS_ACCOUNT                 = ""
 AWS_REGION                  = "us-east-1"
-AKEY                        = "AKIAJUSGE5EJ6UY25EJQ"
-SKEY                        = "vT/e+OTvIzkC0XGYgTfpUx1V/paSIMmOICue0gP2"
+AKEY                        = ""
+SKEY                        = ""
 
 #ELASTICSEARCH DEFINITIONS
 elasticsearch_version       = "6.4"
