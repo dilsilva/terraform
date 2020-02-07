@@ -7,7 +7,7 @@ Following the JUVO technical interview requierements.
 
 ## Instructions
 
-Simple run a `terraform init` to initiate the modules, then a `terraform apply` to implementate the whole infrastructure from zero.
+With the `aws configure` setup to your AWS accounts, simple run a `terraform init` to initiate the modules, then a `terraform apply` to implementate the whole infrastructure from zero.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

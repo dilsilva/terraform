@@ -19,7 +19,7 @@ module "elb_http" {
 
   health_check = {
     target              = "HTTP:8080/"
-    interval            = 30
+    interval            = 5
     healthy_threshold   = 2
     unhealthy_threshold = 2
     timeout             = 5
