@@ -12,9 +12,9 @@ add-apt-repository \
 apt-get update
 apt-get install -y docker-ce
 usermod -aG docker ubuntu
-docker login 
-docker pull dilsilva/juvo-nginx:1.0
-docker run --name juvo-nginx-run -p 8080:80 -d dilsilva/juvo-nginx:1.0
+
+docker pull dilsilva/juvo-nginx
+docker run --name juvo-nginx-run -p 8080:80 -d dilsilva/juvo-nginx
 curl http:/localhost:8080
 
 # READ MORE: https://docs.docker.com/install/linux/docker-ce/ubuntu/

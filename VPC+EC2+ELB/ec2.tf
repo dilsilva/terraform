@@ -6,8 +6,8 @@ module "ec2_cluster" {
   instance_count         = 1
 
   ami                    = "ami-07ebfd5b3428b6f4d"
-  instance_type          = "${var.instance_type}"
-  key_name               = "${var.key_pair_name}"
+  instance_type          = var.instance_type
+  key_name               = var.key_pair_name
   monitoring             = true
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = element(module.vpc.private_subnets, 0)
