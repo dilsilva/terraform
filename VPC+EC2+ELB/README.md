@@ -1,6 +1,6 @@
 # Terraform implementations
 
-This is a implementation of a AWS VPC that provides a EC2 instance with an NGINX running in a DOCKER container expose through a ELB.
+This is a implementation of a AWS VPC that provides a EC2 instance with a custom NGINX page running in a DOCKER container exposed through a ELB.
 
 The objective is to quickly achieve the MVP to show some running content, using the AWS enviroment through infraestructure as a code.
 Following the JUVO technical interview requierements.
