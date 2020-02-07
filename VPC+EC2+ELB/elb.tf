@@ -22,7 +22,7 @@ module "elb_http" {
     interval            = 5
     healthy_threshold   = 2
     unhealthy_threshold = 2
-    timeout             = 5
+    timeout             = 2
   }
 
   // ELB attachments
